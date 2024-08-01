@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Profils Sociaux</title>
     <style>
-        @page {
-            size: A4;
-            margin: 20mm;
-        }
-
         body {
             font-family: 'Lucida Calligraphy', cursive, Arial, sans-serif;
             margin: 0;
@@ -23,7 +18,6 @@
             position: relative;
             color: #333;
             overflow: hidden;
-            filter: brightness(70%) contrast(120%);
         }
 
         .scrolling-text-container {
@@ -33,9 +27,9 @@
             width: 100%;
             height: 160px;
             overflow: hidden;
-            z-index: 1000;
             display: flex;
             align-items: center;
+            z-index: 1000;
         }
 
         .scrolling-text {
@@ -150,10 +144,10 @@
 
         .instructions {
             background-color: rgba(255, 255, 255, 0.8); /* Augmente la transparence */
-            padding: 10px;
+            padding: 20px; /* Agrandit le padding pour le texte plus grand */
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            font-size: 24px;
+            font-size: 36px; /* Agrandit la taille du texte */
             color: #333;
             text-align: center;
             margin-top: 20px;
@@ -176,59 +170,126 @@
             margin-left: 10px;
         }
 
+        /* Points rouges éclatants */
+        .red-dot {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            z-index: 300;
+            animation: explode 1s ease-in-out infinite;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* Position des points rouges éclatants */
+        .red-dot:nth-child(1) {
+            left: 50%;
+            top: 20%;
+            animation-duration: 2s;
+            animation-delay: 0s;
+        }
+
+        .red-dot:nth-child(2) {
+            left: 80%;
+            top: 30%;
+            animation-duration: 2s;
+            animation-delay: 1s;
+        }
+
+        .red-dot:nth-child(3) {
+            left: 70%;
+            top: 70%;
+            animation-duration: 2s;
+            animation-delay: 2s;
+        }
+
+        .red-dot:nth-child(4) {
+            left: 40%;
+            top: 10%;
+            animation-duration: 2s;
+            animation-delay: 3s;
+        }
+
+        .red-dot:nth-child(5) {
+            left: 20%;
+            top: 50%;
+            animation-duration: 2s;
+            animation-delay: 4s;
+        }
+
+        /* Ballons */
+        .balloon {
+            position: absolute;
+            z-index: 200;
+            background: url('https://example.com/balloon.png') no-repeat center center;
+            background-size: contain;
+            width: 60px;
+            height: 80px;
+            animation: float 10s ease-in infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100px); }
+        }
+
+        /* Feux d'artifice */
+        .firework {
+            position: absolute;
+            z-index: 300;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,0,0,0.9) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            animation: explode 1s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 100px; height: 100px; opacity: 0; }
+        }
+
+        /* Position des ballons et des feux d'artifice */
+        .balloon:nth-child(6) { left: 10%; top: 10%; }
+        .balloon:nth-child(7) { left: 30%; top: 15%; }
+        .balloon:nth-child(8) { left: 50%; top: 20%; }
+        .balloon:nth-child(9) { left: 70%; top: 25%; }
+        .balloon:nth-child(10) { left: 90%; top: 30%; }
+
+        .firework:nth-child(11) { left: 15%; top: 10%; animation-duration: 2s; }
+        .firework:nth-child(12) { left: 35%; top: 20%; animation-duration: 2.5s; }
+        .firework:nth-child(13) { left: 55%; top: 30%; animation-duration: 3s; }
+        .firework:nth-child(14) { left: 75%; top: 40%; animation-duration: 2.5s; }
+        .firework:nth-child(15) { left: 95%; top: 50%; animation-duration: 3s; }
+
+        /* Émojis (macarons et gâteaux) */
         .emoji {
             position: absolute;
             animation: fall linear infinite;
             white-space: nowrap;
+            z-index: 100;
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(-100vh);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
         }
 
         .emoji.macarons { font-size: 30px; }
         .emoji.gateau { font-size: 40px; }
 
-        .emoji:nth-child(1) {
-            left: 10%;
-            animation-duration: 5s;
-            animation-delay: 0s;
-        }
-
-        .emoji:nth-child(2) {
-            left: 25%;
-            animation-duration: 7s;
-            animation-delay: 1s;
-        }
-
-        .emoji:nth-child(3) {
-            left: 40%;
-            animation-duration: 6s;
-            animation-delay: 2s;
-        }
-
-        .emoji:nth-child(4) {
-            left: 55%;
-            animation-duration: 8s;
-            animation-delay: 3s;
-        }
-
-        .emoji:nth-child(5) {
-            left: 70%;
-            animation-duration: 5s;
-            animation-delay: 4s;
-        }
-
-        .emoji:nth-child(6) {
-            left: 85%;
-            animation-duration: 7s;
-            animation-delay: 5s;
-        }
+        .emoji:nth-child(16) { left: 10%; top: 20%; animation-duration: 5s; }
+        .emoji:nth-child(17) { left: 25%; top: 30%; animation-duration: 6s; }
+        .emoji:nth-child(18) { left: 40%; top: 40%; animation-duration: 7s; }
+        .emoji:nth-child(19) { left: 55%; top: 50%; animation-duration: 5s; }
+        .emoji:nth-child(20) { left: 70%; top: 60%; animation-duration: 6s; }
+        .emoji:nth-child(21) { left: 85%; top: 70%; animation-duration: 7s; }
 
         @media (max-width: 600px) {
             .scrolling-text {
@@ -254,7 +315,7 @@
             }
 
             .instructions {
-                font-size: 18px;
+                font-size: 24px; /* Ajuste à une taille raisonnable pour petits écrans */
             }
 
             .like-message {
@@ -268,7 +329,28 @@
     </style>
 </head>
 <body>
-    <!-- Pluie d'émojis -->
+    <!-- Points rouges éclatants -->
+    <div class="red-dot"></div>
+    <div class="red-dot"></div>
+    <div class="red-dot"></div>
+    <div class="red-dot"></div>
+    <div class="red-dot"></div>
+
+    <!-- Ballons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Feux d'artifice -->
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+    <!-- Émojis (macarons et gâteaux) -->
     <div class="emoji macarons">🧁</div>
     <div class="emoji macarons">🧁</div>
     <div class="emoji macarons">🧁</div>
@@ -300,7 +382,7 @@
                 </a>
             </li>
         </ul>
-        <div class="instructions">Cliquez sur le logo pour accéder à la page</div>
+        <div class="instructions">Cliquez sur le logo pour accéder à ma page</div>
         <div class="like-message">
             N'oubliez pas de liker <span class="heart">❤️</span>
         </div>
