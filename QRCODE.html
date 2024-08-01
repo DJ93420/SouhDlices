@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code pour Souh-Délices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .qr-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .qr-container img {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <h1>Scannez ce QR Code</h1>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dj93420.github.io/SouhD-lices/pr%C3%A9sentation.html" alt="QR Code">
+        <p>Pour accéder à la page : <a href="https://dj93420.github.io/SouhD-lices/pr%C3%A9sentation.html" target="_blank">Cliquez ici</a></p>
+    </div>
+</body>
+</html>
